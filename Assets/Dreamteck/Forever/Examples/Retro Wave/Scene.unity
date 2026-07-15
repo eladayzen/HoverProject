@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dreamteck Car
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6504cdbbb79425544b299ea6f17e4baf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6504cdbbb79425544b299ea6f17e4baf, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -316,6 +320,63 @@ MonoBehaviour:
   groundRaycastHeight: 100
   elevateSpeed: 15
   lowerSpeed: 1.5
+--- !u!1001 &30917991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 347611192}
+    m_Modifications:
+    - target: {fileID: 5868249849444423233, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_Name
+      value: Skater
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
 --- !u!1 &347611189
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +528,7 @@ Transform:
   - {fileID: 1023916978}
   - {fileID: 646690516}
   - {fileID: 7583176}
+  - {fileID: 1104905227}
   m_Father: {fileID: 799439110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &347611193
@@ -812,6 +874,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 347611192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1104905227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6502043963324599547, guid: f88b08139594c4c24a693f33a46d3c44, type: 3}
+  m_PrefabInstance: {fileID: 30917991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138056085
 GameObject:
   m_ObjectHideFlags: 0
