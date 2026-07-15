@@ -18,6 +18,9 @@ namespace Dreamteck.Forever
         public AnimationCurve hoverCurve;
         [Range(0f, 2f)]
         public float stabilizerStrenght = 0.5f;
+        [Tooltip("Maximum angle (degrees) the car is allowed to pitch/roll away from upright. Keeps it from ever flipping over.")]
+        [Range(0f, 90f)]
+        public float maxTiltAngle = 12f;
         private float forwardInput;
         private float sidewaysInput;
         private Rigidbody rb;
@@ -83,11 +86,18 @@ namespace Dreamteck.Forever
             Vector3 resultLocalPlayerForward = resultMatrix.inverse.MultiplyVector(trs.forward);
             resultLocalPlayerForward.x = 0f;
             resultLocalPlayerForward.Normalize();
-            rb.MoveRotation(Quaternion.LookRotation(resultMatrix.MultiplyVector(resultLocalPlayerForward), trs.up));
+            Vector3 worldForward = resultMatrix.MultiplyVector(resultLocalPlayerForward);
+            //Clamp how far the car is allowed to tilt away from upright, so it can never flip
+            Quaternion uprightRotation = Quaternion.LookRotation(worldForward, Vector3.up);
+            Quaternion naturalRotation = Quaternion.LookRotation(worldForward, trs.up);
+            rb.MoveRotation(Quaternion.RotateTowards(uprightRotation, naturalRotation, maxTiltAngle));
             
             //Handle player physics forces
             Vector3 localTorque = trs.InverseTransformDirection(rb.angularVelocity);
             localTorque.y = 0f;
+            //Damp pitch/roll spin so the car settles into the tilt clamp instead of fighting it
+            localTorque.x *= 0.5f;
+            localTorque.z *= 0.5f;
             rb.angularVelocity = trs.TransformDirection(localTorque);
             Vector3 localVelocity = trs.InverseTransformDirection(rb.linearVelocity);
             if (forwardInput > 0f && localVelocity.z < maxSpeed)  rb.AddForce(projector.result.forward * acceleration * forwardInput * accelerationCurve.Evaluate(localVelocity.z / maxSpeed), ForceMode.Force);
