@@ -853,7 +853,7 @@ MonoBehaviour:
   _levelRandomizer: {fileID: 0}
   _generationRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: 3529cc9903db546449d530fea2dc69de, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 4d70c8e2531054222972d823a993bffe, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!4 &799439110
